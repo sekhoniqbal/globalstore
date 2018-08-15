@@ -1,0 +1,74 @@
+﻿@model IEnumerable<WebApplication1.Models.Product>
+   @using WebApplication1.Models;
+
+@{
+    ViewBag.Title = "Your Products";
+    globalSpaceEntities db = new globalSpaceEntities();
+}
+
+<h2>Your Products</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayName("Currency")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateAdded)
+        </th>
+        <th>
+            @Html.DisplayName("Category")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            
+                @{ var s = db.Currencies.Where(u => u.id == item.currencyId).FirstOrDefault().name;
+            <td><span>@s</span></td>}
+            
+            <td>
+                <div style="height:50px;width:50px;position:relative;">
+                    <img src="@item.imgLocation" class="img" />
+                </div>
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.dateAdded)
+            </td>
+            <td>@{ s = db.Categories.Where(u => u.id == item.categoryId).First().name;}
+                <span>@s</span>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

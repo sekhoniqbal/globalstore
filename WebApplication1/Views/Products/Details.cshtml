@@ -1,0 +1,81 @@
+﻿@model WebApplication1.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+    <h4 class="col-md-6">Product Details</h4>
+    <h4 class="col-md-6">Product Image</h4>
+    <hr />
+    <dl class="dl-horizontal col-md-6">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.currencyId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency.name)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sellerid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.name)
+        </dd>
+
+    </dl>
+    <div class="col-md-6">
+        <img src="@Model.imgLocation" class="img-responsive">
+    </div>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

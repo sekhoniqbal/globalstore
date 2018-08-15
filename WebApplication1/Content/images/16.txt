@@ -1,0 +1,34 @@
+Description: [E:]USB Mass Storage Device(2307 PRAM)
+Device Type:  Mass Storage Device
+
+Protocal Version: USB 2.00
+Current Speed: High Speed
+Max Current: 100mA
+
+USB Device ID: VID = 13FE PID = 5500
+
+Device Vendor: Phison
+Device Name: 2307 Boot ROM
+Device Revision: 0110
+
+Product Model: 2307 PRAM
+Product Revision: 1.00
+
+Controller Vendor: Phison
+Controller Part-Number: PS2251-07(PS2307) - F/W 01.02.10 [2013-05-28]
+Flash ID code:      98DE9493 - Toshiba TC58NVG6DDJTA00 [MLC-16K]
+
+Tools on web: http://dl.mydigit.net/special/up/phison.html
+
+
+Possible Flash Part-Number
+----------------------------
+[1CE]TC58NVG6DDJTA00(19nm)
+[2CE]TH58NVG7DDJTA20(19nm)
+[2CE]TH58TEG7CDJBA4C(19nm)
+[4CE]TH58TEG8CDJBA8C(19nm)
+
+
+Flash ID mapping table
+----------------------------
+[Channel 0]	[Channel 1]
